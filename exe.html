@@ -145,7 +145,16 @@ body {
 
 <script>
   function yesClicked() {
-  alert("SYSTEM CONFIRMED: Love detected 💗");
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("div");
+    heart.innerText = "💗";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "80vh";
+    heart.style.fontSize = "20px";
+    heart.style.animation = "floatUp 2s ease-out forwards";
+    document.body.appendChild(heart);
+  }
 }
 
 function noClicked() {
