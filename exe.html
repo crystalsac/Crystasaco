@@ -151,18 +151,36 @@ body {
 
 <script>
  function yesClicked() {
-   alert("YES WORKED 💗");
 
-   document.body.style.transition = "0.3s";
-   document.body.style.boxShadow = "inset 0 0 100px #ff4fd8";
+  // Change the title text
+  document.querySelector(".title").innerText = "Smart man 😌💗";
 
-   setTimeout(() => {
-      document.body.style.boxShadow = "none";
-   }, 400);
+  // Pink glow effect
+  document.body.style.transition = "0.3s";
+  document.body.style.boxShadow = "inset 0 0 100px #ff4fd8";
 
-   for (let i = 0; i < 15; i++) {
-      ...
-   }
+  setTimeout(() => {
+    document.body.style.boxShadow = "none";
+  }, 400);
+
+  // Floating pink hearts
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("div");
+    heart.innerText = "💗";
+
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "80vh";
+    heart.style.fontSize = "22px";
+    heart.style.pointerEvents = "none";
+    heart.style.animation = "floatUp 2s ease-out forwards";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
+  }
 }
 
 function noClicked() {
