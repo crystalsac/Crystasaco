@@ -76,7 +76,13 @@ body {
 .container {
   text-align: center;
   position: relative;
-  animation: fadeIn 1.5s ease forwards;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
 }
 
 .pixel-title {
@@ -87,7 +93,7 @@ body {
     0 0 5px #ff4fd8,
     0 0 10px #ff4fd8,
     0 0 20px #ff4fd8;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -115,16 +121,11 @@ body {
 }
 
 .scanlines {
-  position: absolute;
+  position: fixed;   /* 👈 change this */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.03) 0px,
-    rgba(255,255,255,0.03) 2px,
-    transparent 2px,
-    transparent 4px
-  );
   pointer-events: none;
 }
 
