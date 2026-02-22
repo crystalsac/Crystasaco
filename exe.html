@@ -138,6 +138,19 @@ body {
     opacity: 0;
   }
 }
+  .couple-photo {
+  width: 220px;
+  border-radius: 20px;
+  margin-top: 30px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.5s ease;
+}
+
+.couple-photo.show {
+  opacity: 1;
+  transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -152,6 +165,7 @@ body {
   <button onclick="yesClicked()">YES</button>
   <button onclick="noClicked()">NO</button>
 </div>
+  <img src="IMG_8732.jpeg" class="couple-photo" id="couplePhoto">
 </div>
 
 <div class="scanlines"></div>
@@ -159,12 +173,18 @@ body {
 <script>
  function yesClicked() {
 
+  // Hide original photos
+  document.querySelector(".photo-row").style.display = "none";
+
+  // Show couple photo
+  document.getElementById("couplePhoto").classList.add("show");
+
   // Change the title text
   document.querySelector(".title").innerText = "Smart man 😌💗";
 
   // Pink glow effect
   document.body.style.transition = "0.3s";
-  document.body.style.boxShadow = "inset 0 0 100px #ff4fd8";
+  document.body.style.boxShadow = "inset 0 0 60px #ff4fd8";
 
   setTimeout(() => {
     document.body.style.boxShadow = "none";
@@ -174,13 +194,12 @@ body {
   for (let i = 0; i < 15; i++) {
     const heart = document.createElement("div");
     heart.innerText = "💗";
-
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "80vh";
     heart.style.fontSize = "22px";
     heart.style.pointerEvents = "none";
-    heart.style.animation = "floatUp 2s ease-out forwards";
+    heart.style.animation = "floatUp 2s ease forwards";
 
     document.body.appendChild(heart);
 
