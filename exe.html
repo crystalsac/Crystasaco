@@ -8,6 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+  @keyframes floatUp {
+  to {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
   .buttons {
   display: flex;
   gap: 20px;
@@ -145,15 +151,29 @@ body {
 
 <script>
   function yesClicked() {
+  document.body.style.transition = "0.3s";
+  document.body.style.boxShadow = "inset 0 0 100px #ff4fd8";
+
+  setTimeout(() => {
+    document.body.style.boxShadow = "none";
+  }, 400);
+
   for (let i = 0; i < 15; i++) {
     const heart = document.createElement("div");
     heart.innerText = "💗";
+
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "80vh";
     heart.style.fontSize = "20px";
+    heart.style.pointerEvents = "none";
     heart.style.animation = "floatUp 2s ease-out forwards";
+
     document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 2000);
   }
 }
 
