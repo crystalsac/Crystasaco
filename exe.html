@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,15 +174,16 @@ body {
 <script>
  function yesClicked() {
 
-  // Hide original photos
-  document.querySelector(".photo-row").style.display = "none";
+  // Hide only avatars
+  document.querySelectorAll(".avatar").forEach(img => {
+    img.style.display = "none";
+  });
 
   // Show couple photo
   document.getElementById("couplePhoto").classList.add("show");
 
-  // Change the title text
+  // Change title text
   document.querySelector(".title").innerText = "Smart man 😌💗";
-
   // Pink glow effect
   document.body.style.transition = "0.3s";
   document.body.style.boxShadow = "inset 0 0 60px #ff4fd8";
