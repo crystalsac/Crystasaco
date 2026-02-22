@@ -149,7 +149,10 @@ body {
 }
 
 function noClicked() {
-  window.open("https://media1.tenor.com/m/jxSQRy63c_wAAAAd/lovelyti-tv-lovelyti2002.gif", "_blank");
+  alert("Incorrect answer detected.");
+  setTimeout(() => {
+    window.open("https://media1.tenor.com/m/jxSQRy63c_wAAAAd/lovelyti-tv-lovelyti2002.gif", "_blank");
+  }, 500);
 }
 function glitch() {
   document.body.style.animation = "shake 0.2s 3";
