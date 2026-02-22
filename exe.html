@@ -85,7 +85,7 @@ body {
     0 0 5px #ff4fd8,
     0 0 10px #ff4fd8,
     0 0 20px #ff4fd8;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .subtitle {
@@ -171,7 +171,9 @@ body {
   document.querySelector(".container").style.marginTop = "10vh";
 
   // Hide photo row (both small circle photos + title row)
-  document.querySelector(".photo-row").style.display = "none";
+  document.querySelectorAll(".avatar").forEach(img => {
+  img.style.display = "none";
+});
 
   // Hide buttons
   document.querySelector(".buttons").style.display = "none";
